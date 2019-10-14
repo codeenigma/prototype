@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "name": "$bp--small-phone",
+      "value": "360px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--phone",
+      "value": "479px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--tablet",
+      "value": "767px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--laptop",
+      "value": "980px",
+      "comment": ""
+    },
+    {
+      "name": "$bp--desktop",
+      "value": "1200px",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$bp--</code> in <code>pattern-lab/source/_patterns/01-basics/00-breakpoints/_breakpoints.scss</code>"
+  }
+}

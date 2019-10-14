@@ -1,0 +1,63 @@
+{
+  "name": "ce-pl",
+  "version": "1.0.0",
+  "description": "PatternLab based prototyping tool by CodeEnigma",
+  "config": {
+    "root": "${PWD}"
+  },
+  "scripts": {
+    "build:sass": "node-sass --source-map-embed --source-map-root file://$npm_package_config_root pattern-lab/source/style.scss > pattern-lab/source/assets/css/style.css && postcss pattern-lab/source/assets/css/style.css -u autoprefixer --map -r",
+    "build:pl": "php pattern-lab/core/console --generate",
+    "build": "run-s build:sass build:pl",
+    "watch:sass": "npm-watch build:sass",
+    "watch:pl": "npm-watch build:pl",
+    "watch": "run-p watch:*",
+    "serve:static": "cd pattern-lab && php core/console --server --host 0.0.0.0",
+    "serve:sync": "browser-sync start --server ./pattern-lab/public --files ./pattern-lab/public --open --port 8080",
+    "serve:jsonpopulate": "php -S 0.0.0.0:8000 -t pattern-lab/vendor/codeenigma/jsonpopulate/www",
+    "start": "run-p watch serve:sync serve:jsonpopulate",
+    "install:pl": "cd pattern-lab && composer install",
+    "postinstall": "run-p install:*",
+    "sync:drupal": "cleancss --output pattern-lab/source/assets/css/style.min.css  pattern-lab/source/assets/css/style.css && rsync -a --delete pattern-lab/source/assets/ $npm_package_config_drupal_theme/assets"
+  },
+  "watch": {
+    "build:sass": {
+      "patterns": [
+        "pattern-lab/source"
+      ],
+      "extensions": "scss"
+    },
+    "build:pl": {
+      "patterns": [
+        "pattern-lab/source/_data",
+        "pattern-lab/source/_patterns",
+        "pattern-lab/source/assets"
+      ],
+      "extensions": "twig,json,ttf,woff,svg,eot,css,js,txt,jpg,png,jpeg,gif,ico"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.codeenigma.com:codeenigma/prototype.git"
+  },
+  "keywords": [
+    "PatternLab",
+    "prototype",
+    "Drupal"
+  ],
+  "dependencies": {
+    "clean-css-cli": "^4.2.1",
+    "install": "^0.11.0",
+    "npm": "^6.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "8.0.0",
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "4.1.2",
+    "npm-watch": "0.3.0",
+    "postcss-cli": "5.0.0"
+  },
+  "license": "MIT"
+}

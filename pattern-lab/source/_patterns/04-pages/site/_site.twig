@@ -1,0 +1,25 @@
+Header
+
+{% if sidebar %}
+  Page title
+  <main id="maincontent" class="main--content with-sidebar">
+
+{% elseif front %}
+  <main id="maincontent" class="main--content front">
+
+{% else %}
+  <main id="maincontent" class="main--content">
+{% endif %}
+
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+
+    {% block sidebar %}
+      {% if sidebar %}
+Side bar
+      {% endif %}
+    {% endblock %}
+
+  </main>
+Footer

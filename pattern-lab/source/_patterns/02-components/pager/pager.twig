@@ -1,0 +1,46 @@
+  <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+    <h4 id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <ul class="pager__items js-pager__items">
+      {# Print first item if we are not on the first page. #}
+        <li class="pager__item pager__item--first">
+          <a href="#" title="{{ 'Go to first page'|t }}">
+            <span class="visually-hidden">{{ 'First page'|t }}</span>
+            <span aria-hidden="true">{{ '« First'|t }}</span>
+          </a>
+        </li>
+      {# Print previous item if we are not on the first page. #}
+        <li class="pager__item pager__item--previous">
+          <a href="#" title="{{ 'Go to previous page'|t }}" rel="prev" }}>
+            <span class="visually-hidden">{{ 'Previous page'|t }}</span>
+            <span aria-hidden="true">{{ '‹ Previous'|t }}</span>
+          </a>
+        </li>
+      {# Add an ellipsis if there are further previous pages. #}
+        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
+      {# Now generate the actual pager piece. #}
+        <li class="pager__item{{  ' is-active' }}">
+          <a href="#" title="{{ 'title'|t }}">
+            <span class="visually-hidden">
+              Page 2
+            </span>
+            {{- 6 -}}
+          </a>
+        </li>
+      {# Add an ellipsis if there are further next pages. #}
+        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
+      {# Print next item if we are not on the last page. #}
+        <li class="pager__item pager__item--next">
+          <a href="#" title="{{ 'Go to next page'|t }}" rel="next">
+            <span class="visually-hidden">{{ 'Next page'|t }}</span>
+            <span aria-hidden="true">{{ 'Next ›'|t }}</span>
+          </a>
+        </li>
+      {# Print last item if we are not on the last page. #}
+        <li class="pager__item pager__item--last">
+          <a href="#" title="{{ 'Go to last page'|t }}">
+            <span class="visually-hidden">{{ 'Last page'|t }}</span>
+            <span aria-hidden="true">{{ 'Last »'|t }}</span>
+          </a>
+        </li>
+    </ul>
+  </nav>

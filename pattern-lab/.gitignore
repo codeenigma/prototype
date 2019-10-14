@@ -1,0 +1,4 @@
+vendor
+public/*
+!public/index.html
+source/assets/css/*

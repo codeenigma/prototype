@@ -1,0 +1,13 @@
+---
+# Defines a group of "pages", keyed by id. Each entry consists of:
+# - source: path to a json file, relative to the root of the config file.
+# - url: a web page to use as source for populating data.
+dirs:
+  - {source: "pattern-lab/source/_data", url: "https://www.codeenigma.com"}
+  - {source: "pattern-lab/source/_patterns/01-basics", url: "https://www.codeenigma.com"}
+  - {source: "pattern-lab/source/_patterns/02-component", url: "https://www.codeenigma.com"}
+  - {source: "pattern-lab/source/_patterns/03-templates", url: "https://www.codeenigma.com"}
+  - {source: "pattern-lab/source/_patterns/04-pages", url: "https://www.codeenigma.com"}
+  
+# Boolean (0/1). Turn debug mode on/off. Currently only triggers twig debug.
+debug: 1

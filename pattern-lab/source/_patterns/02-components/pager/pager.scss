@@ -1,0 +1,29 @@
+.pager {
+  margin: 0 auto;
+  &__items {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+      display: inline-block;
+      margin: 0;
+      padding: 0 0.4em;
+      border: 1px solid black;
+      border-right: none;
+      min-width: 32px;
+      text-align: center;
+      &:last-child {
+        border-right: 1px solid black;
+      }
+  }
+  a {
+    border-bottom: 0;
+    color: black;
+  }
+  .is-active {
+    background-color: black;
+    a {
+      color: white;
+    }
+  }
+}
