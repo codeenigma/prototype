@@ -54,7 +54,7 @@
     "autoprefixer": "8.0.0",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.26.3",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "npm-run-all": "4.1.2",
     "npm-watch": "0.3.0",
     "postcss-cli": "5.0.0"
